@@ -50,7 +50,6 @@ void FillPage(struct Game *game, int page) {
 	sprintf(filename, "intro/%d.flac", page);
 
 	game->intro.audiostream = al_load_audio_stream(GetDataFilePath(filename), 4, 1024);
-	al_attach_audio_stream_to_mixer(game->intro.audiostream, game->audio.voice);
 	al_set_audio_stream_playing(game->intro.audiostream, false);
 	al_set_audio_stream_gain(game->intro.audiostream, 1.75);
 
@@ -70,10 +69,10 @@ void FillPage(struct Game *game, int page) {
 				al_hold_bitmap_drawing(true);
 				al_draw_bitmap(game->intro.table_bitmap, 0, 0, 0);
 				al_hold_bitmap_drawing(true);
-				draw_text(1, "Ever since Twilight Sparkle and her");
-				draw_text(1, "friends imprisoned Discord in stone,");
-				draw_text(1, "Equestria had been peaceful for");
-				draw_text(1, "a long time.");
+				draw_text(1, "A gdyby tak istniała");
+				draw_text(1, "wyimaginowana kraina");
+				draw_text(1, "(i to nie w śnie, lecz na jawie),");
+				draw_text(1, "stworzona tylko dla Ciebie i z myślą o Tobie?");
 				al_hold_bitmap_drawing(false);
 				break;
 			case 2:
@@ -81,9 +80,8 @@ void FillPage(struct Game *game, int page) {
 				al_draw_bitmap_region(game->intro.table_bitmap, al_get_bitmap_width(game->intro.table_bitmap)/2, 0, al_get_bitmap_width(game->intro.table_bitmap)/2, al_get_bitmap_height(game->intro.table_bitmap), game->viewportWidth*0.5, 0, 0);
 				al_hold_bitmap_drawing(false);
 				al_hold_bitmap_drawing(true);
-				draw_text(2, "Until one day a reckless pony caused");
-				draw_text(2, "a tiny bit of chaos near Discord’s");
-				draw_text(2, "statue.");
+				draw_text(2, "W tej krainie mogłabyś robić, co chcesz...");
+				draw_text(2, "Skakać, biegać, latać, jeść...");
 				al_hold_bitmap_drawing(false);
 				break;
 			case 3:
@@ -92,11 +90,8 @@ void FillPage(struct Game *game, int page) {
 				al_draw_bitmap_region(game->intro.table_bitmap, al_get_bitmap_width(game->intro.table_bitmap)/2, 0, al_get_bitmap_width(game->intro.table_bitmap)/2, al_get_bitmap_height(game->intro.table_bitmap), game->viewportWidth*0.5, 0, 0);
 				al_hold_bitmap_drawing(false);
 				al_hold_bitmap_drawing(true);
-				draw_text(3, "This small amount of chaos was not");
-				draw_text(3, "enough to free Discord, but enough");
-				draw_text(3, "to turn discarded muffins into");
-				draw_text(3, "vicious muffinzombies, with aim to");
-				draw_text(3, "destroy all harmony in Equestria.");
+				draw_text(3, "Do woli jeść babeczki, pyszne babeczki, tyle babeczek...");
+				draw_text(3, "Aż do porzygu i bez konsekwencji utycia?");
 				al_hold_bitmap_drawing(false);
 				break;
 			case 4:
@@ -105,13 +100,9 @@ void FillPage(struct Game *game, int page) {
 				al_draw_bitmap_region(game->intro.table_bitmap, al_get_bitmap_width(game->intro.table_bitmap)/2, 0, al_get_bitmap_width(game->intro.table_bitmap)/2, al_get_bitmap_height(game->intro.table_bitmap), game->viewportWidth*0.5, 0, 0);
 				al_hold_bitmap_drawing(false);
 				al_hold_bitmap_drawing(true);
-				draw_text(4, "Discord, learning from his last failure,");
-				draw_text(4, "turned his muffinzombies against Twilight");
-				draw_text(4, "and her friends, trapping them in their");
-				draw_text(4, "own homes. With the bearers of the");
-				draw_text(4, "Elements out of the way, he now waits");
-				draw_text(4, "until chaos takes hold of the world,");
-				draw_text(4, "so he can rule Equestria once again.");
+				draw_text(4, "I tak marzenia stają się rzeczywistością...");
+				draw_text(4, "Jedz, baw się, skacz, biegaj, raduj się!");
+				draw_text(4, "Bądź kucem, jakiego wszyscy KOCHAMY!");
 				al_hold_bitmap_drawing(false);
 				break;
 			case 5:
@@ -120,11 +111,8 @@ void FillPage(struct Game *game, int page) {
 				al_draw_bitmap_region(game->intro.table_bitmap, al_get_bitmap_width(game->intro.table_bitmap)/2, 0, al_get_bitmap_width(game->intro.table_bitmap)/2, al_get_bitmap_height(game->intro.table_bitmap), game->viewportWidth*0.5, 0, 0);
 				al_hold_bitmap_drawing(false);
 				al_hold_bitmap_drawing(true);
-				draw_text(5, "Who can defeat Discord without");
-				draw_text(5, "the Elements of Harmony?");
-				draw_text(5, "");
-				draw_text(5, "Well... There is somepony who knows");
-				draw_text(5, "all about muffins...");
+				draw_text(5, "Jesteś przecież Nieustraszonym");
+				draw_text(5, "Super Słodkim Kucem PRĘTULINO!");
 				al_hold_bitmap_drawing(false);
 				break;
 		}
@@ -164,7 +152,6 @@ void Intro_Draw(struct Game *game) {
 		al_draw_bitmap(game->intro.table, 0, 0, 0);
 		AnimPage(game, game->intro.page+1, al_map_rgba_f(1,1,1,1));
 	}
-	al_draw_text_with_shadow(game->intro.font, al_map_rgb(255,255,255), game->viewportWidth/2, game->viewportHeight*0.88, ALLEGRO_ALIGN_CENTRE, "Press any key to continue or escape to skip...");
 	al_draw_bitmap(game->intro.frame, 0, 0, 0);
 	/*PrintConsole(game, "drawing");*/
 	if (game->intro.in_animation && game->intro.position<=-4*game->viewportWidth) {

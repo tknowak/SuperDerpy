@@ -25,7 +25,7 @@
 bool LevelFailed(struct Game *game, struct TM_Action *action, enum TM_ActionState state) {
 	if (state == TM_ACTIONSTATE_DRAW) {
 		al_draw_filled_rectangle(0, 0, game->viewportWidth, game->viewportHeight, al_map_rgba(0,0,0,100));
-		al_draw_text_with_shadow(game->menu.font_title, al_map_rgb(255,255,255), game->viewportWidth*0.5, game->viewportHeight*0.4, ALLEGRO_ALIGN_CENTRE, "Failed!");
+		al_draw_text_with_shadow(game->menu.font_title, al_map_rgb(255,255,255), game->viewportWidth*0.5, game->viewportHeight*0.4, ALLEGRO_ALIGN_CENTRE, "Następnym razem się uda!");
 	} else if (state == TM_ACTIONSTATE_RUNNING) {
 		// FIXME: this should be more generic. Some callback function?
 		game->level.speed-=0.00001;
@@ -174,7 +174,6 @@ bool Letter(struct Game *game, struct TM_Action *action, enum TM_ActionState sta
 		*f = 0;
 		ALLEGRO_AUDIO_STREAM** stream = (ALLEGRO_AUDIO_STREAM**)malloc(sizeof(ALLEGRO_AUDIO_STREAM*));
 		*stream = al_load_audio_stream(GetDataFilePath(GetLevelFilename(game, "levels/?/letter.flac")), 4, 1024);
-		al_attach_audio_stream_to_mixer(*stream, game->audio.voice);
 		al_set_audio_stream_playing(*stream, false);
 		al_set_audio_stream_gain(*stream, 2.00);
 		action->arguments = TM_AddToArgs(action->arguments, (void*)f);

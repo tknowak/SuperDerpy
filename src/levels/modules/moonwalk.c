@@ -49,8 +49,7 @@ void Moonwalk_Draw(struct Game *game) {
 
 	al_draw_scaled_bitmap(game->level.stage,0,0,al_get_bitmap_width(game->level.stage),al_get_bitmap_height(game->level.stage),0,0,game->viewportWidth, game->viewportHeight,0);
 	al_draw_bitmap(game->level.derpy, game->level.moonwalk.derpy_pos*game->viewportWidth, game->viewportHeight*0.95-al_get_bitmap_height(game->level.derpy), ALLEGRO_FLIP_HORIZONTAL);
-	al_draw_textf(game->font, al_map_rgb(255,255,255), game->viewportWidth/2, game->viewportHeight/2.2, ALLEGRO_ALIGN_CENTRE, "Level %d: Not implemented yet!", game->level.current_level);
-	al_draw_text(game->font, al_map_rgb(255,255,255), game->viewportWidth/2, game->viewportHeight/1.8, ALLEGRO_ALIGN_CENTRE, "Have some moonwalk instead.");
+	al_draw_text(game->font, al_map_rgb(255,255,255), game->viewportWidth/2, game->viewportHeight/1.8, ALLEGRO_ALIGN_CENTRE, "A teraz się bawimy!");
 }
 
 void Moonwalk_Load(struct Game *game) {

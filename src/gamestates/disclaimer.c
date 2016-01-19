@@ -25,11 +25,11 @@
 
 void Disclaimer_Draw(struct Game *game) {
 	al_clear_to_color(al_map_rgb(0,0,0));
-	al_draw_text_with_shadow(game->menu.font_selected, al_map_rgb(255,255,255), game->viewportWidth/2, game->viewportHeight*0.3, ALLEGRO_ALIGN_CENTRE, "This is an early development preview of the game.");
-	al_draw_text_with_shadow(game->menu.font_selected, al_map_rgb(255,255,255), game->viewportWidth/2, game->viewportHeight*0.4, ALLEGRO_ALIGN_CENTRE, "It's not supposed to be complete!");
-	al_draw_text_with_shadow(game->menu.font_selected, al_map_rgb(255,255,255), game->viewportWidth/2, game->viewportHeight*0.5, ALLEGRO_ALIGN_CENTRE, "Keep in mind that everything may be changed");
-	al_draw_text_with_shadow(game->menu.font_selected, al_map_rgb(255,255,255), game->viewportWidth/2, game->viewportHeight*0.6, ALLEGRO_ALIGN_CENTRE, "and many things surely will change.");
-	al_draw_text_with_shadow(game->menu.font, al_map_rgb(255,255,255), game->viewportWidth/2, game->viewportHeight*0.9, ALLEGRO_ALIGN_CENTRE, "Press any key to continue...");
+	al_draw_text_with_shadow(game->menu.font_selected, al_map_rgb(255,255,255), game->viewportWidth/2, game->viewportHeight*0.3, ALLEGRO_ALIGN_CENTRE, "Niniejsza gra dedykowana jest Ani Prętkiej,");
+	al_draw_text_with_shadow(game->menu.font_selected, al_map_rgb(255,255,255), game->viewportWidth/2, game->viewportHeight*0.4, ALLEGRO_ALIGN_CENTRE, "głównej odtwórczyny roli Super Kuca Prętulino.");
+	al_draw_text_with_shadow(game->menu.font_selected, al_map_rgb(255,255,255), game->viewportWidth/2, game->viewportHeight*0.5, ALLEGRO_ALIGN_CENTRE, "Życzymy dobrej zabawy, cukierkowej radości i porzygu z tęczy.");
+	al_draw_text_with_shadow(game->menu.font_selected, al_map_rgb(255,255,255), game->viewportWidth/2, game->viewportHeight*0.6, ALLEGRO_ALIGN_CENTRE, "Margarita & Tomasz Nowak");
+	al_draw_text_with_shadow(game->menu.font, al_map_rgb(255,255,255), game->viewportWidth/2, game->viewportHeight*0.9, ALLEGRO_ALIGN_CENTRE, "Graj w grę!");
 }
 
 void Disclaimer_Load(struct Game *game) {

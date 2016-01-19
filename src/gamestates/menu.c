@@ -166,8 +166,8 @@ void Menu_Draw(struct Game *game) {
 	al_draw_tinted_bitmap(game->menu.logo, al_map_rgba_f(0.1, 0.1, 0.1, 0.1), (game->viewportWidth/2)-(al_get_bitmap_width(game->menu.logo)/2), (game->viewportHeight*0.1), 0);
 	/* END OF GLASS EFFECT */
 
-	al_draw_text_with_shadow(game->menu.font_title, al_map_rgb(255,255,255), game->viewportWidth*0.5, game->viewportHeight*0.1, ALLEGRO_ALIGN_CENTRE, "Super Derpy");
-	al_draw_text_with_shadow(game->menu.font_subtitle, al_map_rgb(255,255,255), game->viewportWidth*0.5, game->viewportHeight*0.275, ALLEGRO_ALIGN_CENTRE, "Muffin Attack");
+	al_draw_text_with_shadow(game->menu.font_title, al_map_rgb(255,255,255), game->viewportWidth*0.5, game->viewportHeight*0.1, ALLEGRO_ALIGN_CENTRE, "Przygody Super Kuca");
+	al_draw_text_with_shadow(game->menu.font_title, al_map_rgb(255,255,255), game->viewportWidth*0.5, game->viewportHeight*0.275, ALLEGRO_ALIGN_CENTRE, "Prętulino");
 
 	DrawMenuState(game);
 }
